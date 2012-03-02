@@ -1,2 +1,2 @@
-require './hello'
+require './validation'
 run Sinatra::Application
