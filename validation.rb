@@ -2,5 +2,5 @@ require 'rubygems'
 require 'sinatra'
 
 get '/' do
-    "I LOVE YOU\nYOU'RE DOING THE RIGHT THING\nGOOD JOB"
+    "I LOVE YOU<br>YOU'RE DOING THE RIGHT THING<br>GOOD JOB"
 end
