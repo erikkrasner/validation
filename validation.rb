@@ -1,6 +1,11 @@
 require 'rubygems'
 require 'sinatra'
 
+messages = ["I LOVE YOU", "YOU'RE DOING THE RIGHT THING", "GOOD JOB",
+"I APPRECIATE YOU", "YOU'RE SO GOOD", "I LOVE THE WAY YOU DO THAT",
+"DON'T WORRY ABOUT IT"]
+
 get '/' do
-    "I LOVE YOU<br>YOU'RE DOING THE RIGHT THING<br>GOOD JOB"
+    @message = messages.sample
+    erb :index
 end
