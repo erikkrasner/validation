@@ -44,7 +44,6 @@
 	var newMessage = function () {
 		var oldCurrentIndex = currentIndex;
 		while (oldCurrentIndex == currentIndex) {
-			oldCurrentIndex = currentIndex;
 			currentIndex = Math.floor(Math.random() * messages.length);
 		}
 		setMessage(currentIndex);
