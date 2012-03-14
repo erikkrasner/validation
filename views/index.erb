@@ -42,7 +42,11 @@
 		}
 	}
 	var newMessage = function () {
-		currentIndex = Math.floor(Math.random() * messages.length);
+		var oldCurrentIndex = -1;
+		while (oldCurrentIndex != currentIndex) {
+			oldCurrentIndex = currentIndex;
+			currentIndex = Math.floor(Math.random() * messages.length);
+		}
 		setMessage(currentIndex);
 		
 	}
