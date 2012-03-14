@@ -42,8 +42,8 @@
 		}
 	}
 	var newMessage = function () {
-		var oldCurrentIndex = -1;
-		while (oldCurrentIndex != currentIndex) {
+		var oldCurrentIndex = currentIndex;
+		while (oldCurrentIndex == currentIndex) {
 			oldCurrentIndex = currentIndex;
 			currentIndex = Math.floor(Math.random() * messages.length);
 		}
