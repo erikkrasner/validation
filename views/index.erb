@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			I LOVE YOU
+		</title>
+		<style type="text/css">
+		body {
+			background:#F7C3F6;
+		}
+		h1 {
+			font-family:Helvetica, sans-serif;
+			text-align:center;
+			font-size:144px;
+			height:100%;
+			vertical-align:middle;
+		}
+		</style>	
+	</head>
+	<body>
+		<h1 id="message">
+		</h1>
+	<script type="text/javascript">
+(function() {
+	var messages = [
+	"I LOVE YOU",
+	"YOU'RE DOING THE RIGHT THING",
+	"GOOD JOB",
+	"I APPRECIATE YOU",
+	"YOU'RE SO GOOD",
+	"I LOVE THE WAY YOU DO THAT",
+	"DON'T WORRY ABOUT IT"
+	]
+	var currentIndex = 0;
+	var setMessage = function (index) {
+		if (messages[index] !== undefined) {
+			currentIndex = index;
+			document.getElementById("message").innerHTML = messages[index];
+			location.hash = currentIndex;
+		}
+	}
+	var newMessage = function () {
+		currentIndex = Math.floor(Math.random() * messages.length);
+		setMessage(currentIndex);
+		
+	}
+	
+	var setMessageToHash = function () {
+		if(!isNaN(parseInt(location.hash.slice(1))))	{
+			setMessage(parseInt(location.hash.slice(1)));
+		}
+	}
+	
+	document.onclick = newMessage;
+	window.onhashchange = setMessageToHash;
+	if(location.hash) {
+		setMessageToHash();
+	}	else{
+		setMessage(0);
+	}
+})();
+		</script>
+	</body>
+</html>
