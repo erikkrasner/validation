@@ -102,7 +102,6 @@
 	
 	document.onclick = newMessage;
 	window.onhashchange = onHashChange;
-	document.getElementByID("audio").onclick = toggleSound;
 	if(location.hash) {
 		onHashChange();
 	}	else{
@@ -111,7 +110,7 @@
 	}
 })();
 		</script>
-		<audio id="audio" src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
+		<audio id="audio" onclick="toggleSound" src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
 		</audio>
 	
 	</body>
