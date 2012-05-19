@@ -16,23 +16,25 @@
 			height:100%;
 			vertical-align:middle;
 		}
-		#sound	{
+		p {
 			position:absolute;
 			color:white;
 			font-size:18px;
 			top:20px;
 			right:20px;
-			background-image:none;
 		}
-		#sound:hover {
+		p span:hover {
 			font-weight:bold;
+		}
+		a {
+			color:inherit;
 		}
 		</style>	
 	</head>
 	<body>
 		<h1 id="message">
 		</h1>
-		<button id="sound" onclick="toggleSound"></button>
+		<p><span id="sound" onclick="toggleSound"></span> | By <span><a href="http://github.com/erikkrasner">Erik</a></span>
 	<script type="text/javascript">
 (function() {
 	var messages = [
