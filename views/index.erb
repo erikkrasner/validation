@@ -21,6 +21,7 @@
 	<body>
 		<h1 id="message">
 		</h1>
+		<p id="sound"></p>
 	<script type="text/javascript">
 (function() {
 	var messages = [
@@ -54,21 +55,38 @@
 	}
 	
 	var setMessageToHash = function () {
-		if(!isNaN(parseInt(location.hash.slice(1))))	{
-			setMessage(parseInt(location.hash.slice(1)));
+		var number = parseInt(location.hash.slice(1)).split('&')[0])
+		if(!isNaN(number))	{
+			setMessage(number);
 		}
 	}
 	
-	document.onclick = newMessage;
-	window.onhashchange = setMessageToHash;
-	if(location.hash) {
+	var setSound = function(on)	{
+		var soundButton = document.getElementById("sound");
+		if (on) {
+			soundButton.innerHTML = "sound on"
+		} else {
+			soundButton.innerHTML = "sound off"
+		}
+	}
+	
+	var onHashChange = function() {
 		setMessageToHash();
+		setSoundToHash();
+	}
+	
+	document.onclick = newMessage;
+	window.onhashchange = onHashChange;
+	if(location.hash) {
+		onHashChange();
 	}	else{
 		setMessage(0);
+		setSound(true);
 	}
 })();
 		</script>
 		<audio src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
 		</audio>
+	
 	</body>
 </html>
