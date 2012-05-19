@@ -30,7 +30,7 @@
 	<body>
 		<h1 id="message">
 		</h1>
-		<p id="sound"></p>
+		<p id="sound" onclick="toggleSound"></p>
 	<script type="text/javascript">
 (function() {
 	var messages = [
@@ -80,7 +80,7 @@
 		} else {
 			soundButton.innerHTML = "sound off";
 			sound.pause();
-			if (location.hash.indexOf(nosound) == -1)	{
+			if (location.hash.indexOf("nosound") == -1)	{
 				location.hash = location.hash + "&nosound";
 			}
 		}
@@ -90,7 +90,7 @@
 		setSound(location.hash.indexOf("nosound") != -1);
 	}
 	
-	var toggleSound = function() {
+	toggleSound = function() {
 		var sound = document.getElementById("audio");
 		setSound(!sound.paused);
 	}
@@ -110,7 +110,7 @@
 	}
 })();
 		</script>
-		<audio id="audio" onclick="toggleSound" src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
+		<audio id="audio" src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
 		</audio>
 	
 	</body>
