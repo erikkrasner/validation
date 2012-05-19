@@ -16,14 +16,14 @@
 			height:100%;
 			vertical-align:middle;
 		}
-		p	{
+		#sound	{
 			position:absolute;
 			color:white;
 			font-size:18px;
 			top:20px;
 			right:20px;
 		}
-		p:hover {
+		#sound:hover {
 			font-weight:bold;
 		}
 		</style>	
@@ -31,7 +31,7 @@
 	<body>
 		<h1 id="message">
 		</h1>
-		<p id="sound" onclick="toggleSound"></p>
+		<button id="sound" onclick="toggleSound"></button>
 	<script type="text/javascript">
 (function() {
 	var messages = [
