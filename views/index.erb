@@ -31,7 +31,7 @@
 	<body>
 		<h1 id="message">
 		</h1>
-		<button id="sound" onclick="toggleSound"></button>
+		<button id="sound" onload="function() {this.onclick = toggleSound;}" onclick="toggleSound"></button>
 	<script type="text/javascript">
 (function() {
 	var messages = [
@@ -99,9 +99,6 @@
 	
 	toggleSound = function() {
 		var sound = document.getElementById("audio");
-		console.log(sound);
-		console.log(sound.paused);
-		console.log(setSound);
 		setSound(sound.paused);
 	}
 	
@@ -118,6 +115,7 @@
 		setMessage(0);
 		setSound(true);
 	}
+	
 })();
 		</script>
 		<audio id="audio" src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
