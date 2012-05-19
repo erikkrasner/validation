@@ -70,11 +70,27 @@
 	
 	var setSound = function(on)	{
 		var soundButton = document.getElementById("sound");
+		var sound = document.getElementById("audio");
 		if (on) {
-			soundButton.innerHTML = "sound on"
+			soundButton.innerHTML = "sound on";
+			sound.play();
+			location.hash = location.hash.replace(/&?nosound/,"");
 		} else {
-			soundButton.innerHTML = "sound off"
+			soundButton.innerHTML = "sound off";
+			sound.pause();
+			if (location.hash.indexOf(nosound) == -1)	{
+				location.hash = location.hash + "&nosound";
+			}
 		}
+	}
+	
+	var setSoundToHash = function() {
+		setSound(location.hash.indexOf("nosound") != -1);
+	}
+	
+	var toggleSound = function() {
+		var sound = document.getElementById("audio");
+		setSound(!sound.paused);
 	}
 	
 	var onHashChange = function() {
@@ -92,7 +108,7 @@
 	}
 })();
 		</script>
-		<audio src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
+		<audio id="audio" src="http://dl.dropbox.com/u/8922399/feel.ogg" autoplay loop>
 		</audio>
 	
 	</body>
