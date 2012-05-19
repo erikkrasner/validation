@@ -19,6 +19,8 @@
 		p	{
 			color:white;
 			font-size:18px;
+			top:20px;
+			right:20px;
 		}
 		p:hover {
 			font-weight:bold;
@@ -100,6 +102,7 @@
 	
 	document.onclick = newMessage;
 	window.onhashchange = onHashChange;
+	document.getElementByID("audio").onclick = toggleSound;
 	if(location.hash) {
 		onHashChange();
 	}	else{
