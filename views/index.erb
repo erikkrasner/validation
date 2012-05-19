@@ -76,11 +76,15 @@
 		var sound = document.getElementById("audio");
 		if (on) {
 			soundButton.innerHTML = "sound on";
-			sound.play();
+			if(sound) {
+				sound.play();
+			}
 			location.hash = location.hash.replace(/&?nosound/,"");
 		} else {
 			soundButton.innerHTML = "sound off";
-			sound.pause();
+			if(sound)	{
+				sound.pause();
+			}
 			if (location.hash.indexOf("nosound") == -1)	{
 				location.hash = location.hash + "&nosound";
 			}
