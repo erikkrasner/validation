@@ -48,12 +48,14 @@
 	"KEEP GOING"
 	]
 	var currentIndex = 0;
-	var setMessage = function (index) {
+	var setMessage = function (index, oldIndex) {
 		if (messages[index] !== undefined) {
 			currentIndex = index;
 			document.getElementById("message").innerHTML = messages[index];
-			location.hash = currentIndex;
 		}
+	}
+	var setHashNumber(oldIndex, newIndex) {
+		location.hash = location.hash.replace(oldIndex, newIndex);
 	}
 	var newMessage = function () {
 		var oldCurrentIndex = currentIndex;
@@ -61,7 +63,7 @@
 			currentIndex = Math.floor(Math.random() * messages.length);
 		}
 		setMessage(currentIndex);
-		
+		setHashNumber(oldCurrentIndex,currentIndex);
 	}
 	
 	var setMessageToHash = function () {
@@ -102,7 +104,7 @@
 	
 	var onHashChange = function() {
 		setMessageToHash();
-		setTimeout(setSoundToHash);
+		setSoundToHash();
 	}
 	
 	document.onclick = newMessage;
