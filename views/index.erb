@@ -54,7 +54,7 @@
 			document.getElementById("message").innerHTML = messages[index];
 		}
 	}
-	var setHashNumber(oldIndex, newIndex) {
+	var setHashNumber = function (oldIndex, newIndex) {
 		location.hash = location.hash.replace(oldIndex, newIndex);
 	}
 	var newMessage = function () {
