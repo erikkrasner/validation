@@ -7,14 +7,18 @@
 		</title>
 		<style type="text/css">
 		body {
+			font-family:Helvetica, sans-serif;
 			background:#F7C3F6;
 		}
 		h1 {
-			font-family:Helvetica, sans-serif;
 			text-align:center;
 			font-size:144px;
 			height:100%;
 			vertical-align:middle;
+		}
+		p	{
+			color:white;
+			font-size:18px;
 		}
 		</style>	
 	</head>
@@ -55,7 +59,7 @@
 	}
 	
 	var setMessageToHash = function () {
-		var number = parseInt(location.hash.slice(1)).split('&')[0])
+		var number = parseInt(location.hash.slice(1).split('&')[0]);
 		if(!isNaN(number))	{
 			setMessage(number);
 		}
