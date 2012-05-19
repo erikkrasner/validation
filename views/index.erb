@@ -31,7 +31,7 @@
 	<body>
 		<h1 id="message">
 		</h1>
-		<button id="sound" onload="function() {this.onclick = toggleSound;}" onclick="toggleSound"></button>
+		<button id="sound" onclick="toggleSound"></button>
 	<script type="text/javascript">
 (function() {
 	var messages = [
@@ -75,6 +75,7 @@
 	
 	setSound = function(on)	{
 		var soundButton = document.getElementById("sound");
+		soundButton.onclick = toggleSound;
 		var sound = document.getElementById("audio");
 		if (on) {
 			soundButton.innerHTML = "sound on";
