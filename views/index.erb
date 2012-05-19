@@ -87,7 +87,7 @@
 	}
 	
 	var setSoundToHash = function() {
-		setSound(location.hash.indexOf("nosound") != -1);
+		setSound(location.hash.indexOf("nosound") == -1);
 	}
 	
 	toggleSound = function() {
