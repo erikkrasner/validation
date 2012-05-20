@@ -58,7 +58,11 @@
 		}
 	}
 	var setHashNumber = function (oldIndex, newIndex) {
-		location.hash = location.hash.replace(oldIndex, newIndex);
+		if (location.indexOf(oldIndex) != -1)	{
+			location.hash = location.hash.replace(oldIndex, newIndex);
+		} else {
+			location.hash = location.hash.replace("#","#" + newIndex);
+		}
 	}
 	var newMessage = function () {
 		var oldCurrentIndex = currentIndex;
